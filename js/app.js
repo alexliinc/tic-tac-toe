@@ -1,10 +1,12 @@
+var winningCond = 
+[
+[1,2,3],[4,5,6],[7,8,9],
+[1,4,7],[2,5,8],[3,6,9],
+[1,5,9],[3,5,7]
+];
 
-$(".jumbotron").addClass("text-center");
-
-
-// X and O are set to zero once either hit 15 we will have a winner
-var O = 0;
-var X = 0;
+var O = [];
+var X = [];
 var turns = 0;
 
 //playing the Game
@@ -14,36 +16,45 @@ $playGame = function()
   {
     if (turns % 2 === 0)
     {
-      O += parseInt(this.id);
+      O.push(parseInt(this.id));
       $(this).data('clicked', true);
       $(this).html("X").css({"color":"blue", "text-align":"center","font-size":"60px"});
       turns++;
     }
     else
     {
-      X += parseInt(this.id);
+      X.push(parseInt(this.id));
       $(this).data('clicked', true);
       $(this).html("O").css({"color":"red", "text-align":"center","font-size":"60px"});
       turns++;
     }
   }
-  $winnerWinner();
+   winnerWinner(X);
+   winnerWinner(O);
    console.log(this.id);
    console.log("turns are " + turns);
    console.log("x is " + X);
    console.log("o is " + O);
 }
 
-// Win condition
-$winnerWinner = function(){
-  if(X === 15 && turns > 2)
-  {
-    alert('O is the winner');
-  }
-  else if (O === 15 && turns > 2) {
-    alert('X is the winner');
-  }
-}
+function winnerWinner(X){
 
+    for( i = 0 ; i < winningCond.length; i++)
+    {
+        var currentWinCond = winningCond[i];
+
+        if (X.filter(function (elem){
+        return currentWinCond.indexOf(elem) > -1;
+        }).length == currentWinCond.length)
+        {
+            alert('WINNER');
+        }
+        else
+        {
+            console.log(false);
+        }
+
+    }   
+}
 
 $(".square").on("click", $playGame);
