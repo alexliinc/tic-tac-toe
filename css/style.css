@@ -1,20 +1,39 @@
 
+* {
+	font-family: 'Permanent Marker', cursive;
+}
+
 .square{
-    width:100px;
-    height:100px;
+    width:200px;
+    height:200px;
 }
 
 .v{
     border-left:10px solid #000;
     border-right:10px solid #000;
+    border-color: white;
 }
 
 .h{
     border-top:10px solid #000;
     border-bottom:10px solid #000;
+    border-color: white;
+}
+
+.avoidClicks {
+	pointer-events: none;
 }
 
 #board{
-    width: 300px;
-    margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 600px;
+  height: 600px;
+  background: black;
+}
+
+td:hover {
+	background-image: radial-gradient(circle closest-side, #444, #000);
 }

@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>TIC TAC TOE</title>
   </head>
-  <body id="container">
-    <h1 class="jumbotron">Tic Tac Toe</h1>
-    <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh">
-
+  <body>
+    <h1 class="jumbotron text-center">Tic Tac Toe</h1>
+    <input type="button" class="btn btn-primary btn-block" value="Refresh Page" onClick="history.go(0)">
    <div id="board">
     <table>
       <tr id="row1">
@@ -28,6 +28,7 @@
         <td class="square" id="9"></td>
       </tr>
     </table>
+  </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript"  src="js/app.js">
